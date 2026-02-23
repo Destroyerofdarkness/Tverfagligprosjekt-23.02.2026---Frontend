@@ -2,11 +2,15 @@ const express = require("express");
 
 const cors = require("cors");
 
+const path = require("path");
+
 require("dotenv").config();
 
 const app = express();
 
 const default_routes = require("./routes/default_routes")
+
+app.use(express.static(path.join(__dirname, "public")));
 
 app.use(express.json());
 

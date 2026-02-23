@@ -1,0 +1,53 @@
+body, html{
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+header{
+    background: var(--primaryColor);
+    width: 100%;
+    display: flex;
+}
+h1{
+    font-size: 2vw;
+    font-family: var(--k2d);
+    color: white;
+    font-weight: 100;
+    text-align: center;
+}
+header section{
+    flex: 1;
+    align-items: center;
+    display: flex;
+}
+header section img{
+    margin: 0.5vw;
+    width: max-content;
+    height: 3vw;
+    align-self: center;
+}
+header nav{
+    flex: 1;
+    display: flex;
+    justify-content: end;
+    margin-right: 0.5vw;
+}
+header nav a{
+    align-self: center;
+    font-size: 1.2vw;
+    background: white;
+    color: var(--primaryColor);
+    border-radius: 0.5vw;
+    padding: 0.3vw;
+    text-decoration: none;
+    min-width: 8vw;
+    font-family: var(--kadwa);
+    font-weight: 300;
+    text-align: center;
+}
+:root{
+    --primaryColor: #89080A;
+    --kadwa: "Kadwa", serif;
+    --k2d: "K2D", sans-serif;
+}
