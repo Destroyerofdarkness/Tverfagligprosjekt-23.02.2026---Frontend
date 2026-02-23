@@ -28,6 +28,11 @@ form section input{
     outline: none;
     font-family: var(--kadwa);
 }
+.error{
+    color: rgb(205, 205, 205);
+    text-decoration:solid;
+    font-size: 1vw;
+}
 form a{
     font-family: var(--kadwa);
     color: white;
