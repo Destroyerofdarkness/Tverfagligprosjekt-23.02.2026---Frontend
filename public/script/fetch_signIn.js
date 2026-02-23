@@ -10,7 +10,7 @@ form.addEventListener("submit", async (e) => {
   userError.innerHTML = ""
   passError.innerHTML = ""
 
-  const res = await fetch("http://localhost:6001/loggInn", {
+  const res = await fetch("http://10.12.14.239:6001/loggInn", {
     method: "POST",
     body: JSON.stringify({ user, passwd}),
     headers: { "Content-Type": "application/json" },

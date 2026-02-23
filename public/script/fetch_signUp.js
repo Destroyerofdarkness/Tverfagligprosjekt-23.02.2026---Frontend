@@ -11,7 +11,7 @@ form.addEventListener("submit", async (e) => {
   userError.innerHTML = ""
   passError.innerHTML = ""
 
-  const res = await fetch("http://localhost:6001/registrer", {
+  const res = await fetch("http://10.12.14.239:6001/registrer", {
     method: "POST",
     body: JSON.stringify({ user, passwd, conPass }),
     headers: { "Content-Type": "application/json" },
