@@ -1,4 +1,6 @@
 
+const maxValidAge = 24*60*60
+
 const render_sign_up = (req,res)=>{
     try{
         res.render("signUp",{title: "Registrer"})
@@ -17,7 +19,21 @@ const render_sign_in = (req,res)=>{
     }
 }
 
+const create_cookie = (req,res)=>{
+   const token = req.params.token
+    try{
+        res.cookie("jwt", token, {
+            httpOnly:true, maxAge: maxValidAge *1000
+        })
+        res.redirect("/")
+    }catch(err){
+        console.log(err);
+        res.status(500).send("Error:",err)
+    }
+}
+
 module.exports = {
     render_sign_up,
-    render_sign_in
+    render_sign_in,
+    create_cookie
 }

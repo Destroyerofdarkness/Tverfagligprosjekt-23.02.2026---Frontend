@@ -6,4 +6,6 @@ router.get("/registrer",controller.render_sign_up)
 
 router.get("/loggInn", controller.render_sign_in)
 
+router.get("/createCookie/:token",controller.create_cookie)
+
 module.exports = router

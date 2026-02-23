@@ -4,6 +4,8 @@ const cors = require("cors");
 
 const path = require("path");
 
+const cookieParser = require("cookie-parser")
+
 require("dotenv").config();
 
 const app = express();
@@ -19,6 +21,8 @@ app.use(express.json());
 app.set("view engine", "ejs")
 
 app.use(express.urlencoded({extended: true}));
+
+app.use(cookieParser())
 
 app.use(cors({
     origin: process.env.HOST,
