@@ -4,36 +4,42 @@ const cors = require("cors");
 
 const path = require("path");
 
-const cookieParser = require("cookie-parser")
+const cookieParser = require("cookie-parser");
 
 require("dotenv").config();
 
 const app = express();
 
-const default_routes = require("./routes/default_routes")
+const { checkUser } = require("./middleware/authMiddleware");
 
-const auth_routes = require("./routes/auth_routes")
+const default_routes = require("./routes/default_routes");
+
+const auth_routes = require("./routes/auth_routes");
 
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use(express.json());
 
-app.set("view engine", "ejs")
+app.set("view engine", "ejs");
 
-app.use(express.urlencoded({extended: true}));
+app.use(express.urlencoded({ extended: true }));
 
-app.use(cookieParser())
+app.use(cookieParser());
 
-app.use(cors({
+app.use(
+  cors({
     origin: process.env.HOST,
-    methods: ["GET","POST", "DELETE","PUT"],
-    allowedHeaders: ["Content-Type","Authorization"]
-}))
+    methods: ["GET", "POST", "DELETE", "PUT"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  }),
+);
 
-app.use(default_routes)
+app.use(checkUser);
 
-app.use(auth_routes)
+app.use(default_routes);
 
-app.listen(process.env.PORT,"0.0.0.0", async()=>{
-console.log("Server is running on port:", process.env.PORT)
+app.use(auth_routes);
+
+app.listen(process.env.PORT, "0.0.0.0", async () => {
+  console.log("Server is running on port:", process.env.PORT);
 });
