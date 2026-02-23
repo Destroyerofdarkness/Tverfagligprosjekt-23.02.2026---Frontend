@@ -1,0 +1,54 @@
+form{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    margin: 10vw;
+    padding: 1.5vw;
+    width: max-content;
+    gap: 0.4vw;
+    border-radius: 0.5vw;
+    background: var(--primaryColor);
+}
+form section{
+    display: flex;
+    flex-direction: column;
+}
+form section label{
+    font-size: 1.3vw;
+    font-family: var(--kadwa);
+    color:white;
+}
+form section input{
+    width: 17vw;
+    margin-left: 0.3vw;
+    padding: 0.3vw;
+    border: 0;
+    font-size: 1.1vw;
+    border-radius: 0.3vw;
+    outline: none;
+    font-family: var(--kadwa);
+}
+form a{
+    font-family: var(--kadwa);
+    color: white;
+    font-size: 1vw;
+}
+form button{
+    align-self: center;
+    width: max-content;
+    margin: 1vw;
+    font-size: 1vw;
+    padding: 0.4vw;
+    border: 0;
+    font-family: var(--kadwa);
+    border-radius: 0.3vw;
+    color: var(--primaryColor);
+}
+button:hover{
+    cursor: pointer;
+}
+:root{
+    --primaryColor: #89080A;
+    --kadwa: "Kadwa", serif;
+    --k2d: "K2D", sans-serif;
+}

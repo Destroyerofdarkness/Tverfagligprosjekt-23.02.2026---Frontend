@@ -31,6 +31,7 @@ header nav{
     flex: 1;
     display: flex;
     justify-content: end;
+    gap: 1vw;
     margin-right: 0.5vw;
 }
 header nav a{
@@ -42,7 +43,7 @@ header nav a{
     padding: 0.3vw;
     text-decoration: none;
     min-width: 8vw;
-    font-family: var(--kadwa);
+    font-family: var(--k2d);
     font-weight: 300;
     text-align: center;
 }
