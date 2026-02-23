@@ -1,6 +1,9 @@
 <%- include("./partials/head.ejs") %>
 <%- include("./partials/header.ejs") %>
 
-    Hello
+    
+    <% if(user){ %>
+        <h2>Hello <%= user %></h2>
+        <% } %>
 </body>
 </html>
