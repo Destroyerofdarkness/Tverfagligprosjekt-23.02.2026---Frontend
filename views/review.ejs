@@ -16,10 +16,23 @@
         <textarea type="text" name="content" id="content" placeholder="Skriv inn en kommentar.."></textarea>
         </section>
         <input type="hidden"name="user" id="user" value="<%= user %>">
-        <input type="hidden" name="connection" id="connection" value="<%= review.title %>">
+        <input type="hidden" name="connection" id="connection" value="<%= review._id %>">
         <button type="submit">Publiser</button>
     </form>
     <% } %>
+    <div>
+    <h3>Kommentarer:</h3>
+    <section id="comments">
+        <% if(comments.length > 0){ %>
+        <% comments.forEach(comment => {%>
+           <h4><%= comment.user %></h4> 
+           <p><%= comment.content %></p>
+        <%}); %>
+        <% }else{ %>
+            <h4>Ingen Kommentarer å vise enda !!</h4>
+            <% } %>
+    </section>
+    </div>
 </main>
 
 </body>

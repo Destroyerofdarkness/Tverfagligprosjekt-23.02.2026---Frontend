@@ -1,7 +1,5 @@
 const form = document.querySelector("form");
 
-const commentError=document.querySelector(".error.comment")
-
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();   
@@ -18,8 +16,5 @@ form.addEventListener("submit", async (e) => {
   const data = await res.json();
   if(data.success){
     window.location.reload()
-  }
-  if(data.errors){
-    contentError.innerHTML = data.errors.content
   }
 });

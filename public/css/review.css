@@ -74,6 +74,25 @@ main form button{
 button:hover{
     cursor: pointer;
 }
+main div{
+    display: flex;
+    flex-direction: column;
+}
+h3{
+    margin: 0.5vw;
+    font-family: var(--kadwa);
+    color: var(--primaryColor);
+    font-size: 1.2vw;
+    font-weight: 300;
+}
+h4{
+    margin: 0;
+    font-size: 1.4vw;
+    font-family: var(--k2d);
+    font-weight: 300;
+    color: white;
+
+}
 
 :root{
     --primaryColor: #89080A;
