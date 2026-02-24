@@ -10,8 +10,17 @@ const render_homepage = async(req,res)=>{
     }
 }
 
+const render_404 = async(req,res)=>{
+    try {
+        res.render("404",{title: "Siden Finnes Ikke!!"})
+    } catch (err) {
+        console.log(err);
+        res.status(500).send(err)
+    }
+}
 
 
 module.exports = {
-    render_homepage
+    render_homepage,
+    render_404
 }
