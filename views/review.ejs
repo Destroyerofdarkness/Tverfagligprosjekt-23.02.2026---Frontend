@@ -1,12 +1,25 @@
 <%- include("./partials/head.ejs") %>
 <link rel="stylesheet" href="/css/review.css">
+<script src="/script/fetch_publish_comment.js" defer></script>
 <%- include("./partials/header.ejs") %>
 <main>
     <section>
         <h2><%= review.title %></h2>
         <p><%= review.content %></p>
         <a href="<%= review.link %>">Sidelenke: Her!</a>
+        <p>Laget av: <%= review.user %></p>
     </section>
+    <%if(user){ %>
+    <form>
+        <section>
+        <label for="content">Skriv et kommentar:</label>
+        <textarea type="text" name="content" id="content" placeholder="Skriv inn en kommentar.."></textarea>
+        </section>
+        <input type="hidden"name="user" id="user" value="<%= user %>">
+        <input type="hidden" name="connection" id="connection" value="<%= review.title %>">
+        <button type="submit">Publiser</button>
+    </form>
+    <% } %>
 </main>
 
 </body>

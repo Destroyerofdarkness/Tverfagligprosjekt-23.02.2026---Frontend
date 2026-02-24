@@ -2,6 +2,7 @@ main{
     margin-top: 6vw;
     align-self: center;
     display: flex;
+    gap: 2vw;
     flex-direction: column;
 }
 main section{
@@ -28,6 +29,50 @@ main section a{
     font-family: var(--kadwa);
     font-weight: 300;
     color: white;
+}
+main form{
+    display: flex;
+    min-width: 43.5vw;
+    align-self: center;
+    background: var(--primaryColor);
+    border-radius: 0.6vw;
+}
+main form section{
+    display: flex;
+    flex-direction: column;
+}
+main form section label{
+    font-size: 1.2vw;
+    font-family: var(--kadwa);
+    font-weight: 300;
+    color: white;
+}
+main form section textarea{
+    width: 30vw;
+    font-size: 1vw;
+    height: 2.4vw;
+    font-family: var(--kadwa);
+    border: 0;
+    outline: none;
+    border-radius: 0.6vw;
+    padding: 0.2vw;
+}
+main form button{
+    height: 2.2vw;
+    align-self: center;
+    margin-top: 2vw;
+    width: 8vw;
+    border: 0;
+    border-radius: 0.5vw;
+    background: white;
+    color: var(--primaryColor);
+    font-family: var(--kadwa);
+    font-weight: 300;
+    text-align: center;
+    font-size: 1.2vw;
+}
+button:hover{
+    cursor: pointer;
 }
 
 :root{
