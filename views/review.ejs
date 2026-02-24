@@ -2,6 +2,7 @@
 <link rel="stylesheet" href="/css/review.css">
 <script src="/script/fetch_publish_comment.js" defer></script>
 <script src="/script/fetch_delete_review.js" defer></script>
+<script src="/script/fetch_delete_comment.js" defer></script>
 <%- include("./partials/header.ejs") %>
 <main>
     <section>
@@ -10,7 +11,7 @@
         <a href="<%= review.link %>">Sidelenke: Her!</a>
         <p>Laget av: <%= review.user %></p>
         <% if(review.user === user){ %>
-        <button id="deleteReview" type="submit" value="<%=review._id   %>">Slett</button>
+        <button id="deleteReview" value="<%=review._id  %>">Slett</button>
         <% } %>
     </section>
     <%if(user){ %>
@@ -31,6 +32,9 @@
         <% comments.forEach(comment => {%>
            <h4><%= comment.user %></h4> 
            <p><%= comment.content %></p>
+           <% if(comment.user === user){%>
+            <button class="deleteComment" data-id="<%= comment._id %>">Slett</button>
+          <% } %>
         <%}); %>
         <% }else{ %>
             <h4>Ingen Kommentarer å vise enda !!</h4>
