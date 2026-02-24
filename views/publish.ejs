@@ -1,0 +1,23 @@
+<%- include("./partials/head.ejs") %>
+<link rel="stylesheet" href="/css/publish.css">
+<script src="/script/fetch_publish_review.js" defer></script>
+<%- include("./partials/header.ejs") %>
+
+<form>
+    <section class="mainSec" >
+        <label for="title">Tittel:</label>
+        <input type="text" name="title" id="title" placeholder="Skriv inn Tittel..">
+    </section>
+    <section class="mainSec">
+        <label for="content">Beskrivelse:</label>
+        <textarea name="content" id="content" placeholder="Skriv inn en god vurdering.."></textarea>
+    </section>
+    <section id="linkSec"><label for="link">Link:</label>
+    <input type="url" name="link" id="link" placeholder="Skriv inn lenke til nettstedet..">
+    <input type="hidden" name="user" id="user" value="<%= user %>">
+    <button type="submit">Publiser</button>
+    </section>
+</form>
+
+</body>
+</html>

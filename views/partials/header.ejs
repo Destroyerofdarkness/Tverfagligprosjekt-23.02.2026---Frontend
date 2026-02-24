@@ -6,7 +6,12 @@
     <h1><%= title %></h1>
     <nav>
         <a href="/">Hjem</a>
-        <a href="/loggInn">Logg Inn</a>
+        <% if(user){ %>
+            <a href="/vurdering/publiser">Publiser Vurdering</a>
+            <a href="/loggUt">Logg Ut</a>
+        <% }else{ %>    
+            <a href="/loggInn">Logg Inn</a>
+        <% } %>
     </nav>
 </header>
 <body>

@@ -1,0 +1,79 @@
+html, body{
+    overflow-y: hidden;
+}
+form{
+    background: var(--primaryColor);
+    width: max-content;
+    align-self: center;
+    margin: 8vw;
+    padding: 1vw;
+    border-radius: 0.5vw;
+}
+.mainSec{
+    display: flex;
+    flex-direction: column;
+}
+.mainSec label{
+    color: white;
+    font-size: 1.3vw;
+    font-family: var(--kadwa);
+    font-weight: 300;
+}
+.mainSec textarea{
+    width: 35vw;
+    padding: 0.5vw;
+    height: 15vw;
+    outline: none;
+    font-size: 0.8vw;
+    font-weight: 300;
+    font-family: var(--kadwa);
+    border-radius: 0.4vw;
+}
+.mainSec input{
+    width: 20vw;
+    padding: 0.4vw;
+    font-size: 0.8vw;
+    font-family: var(--kadwa);
+    font-weight: 300;
+    outline: none;
+    border: 0;
+    border-radius: 0.5vw;
+}
+#linkSec{
+    display: flex;
+    gap: 1vw;
+    margin-top: 0.4vw;
+}
+#linkSec label{
+    font-size: 1vw;
+    font-family: var(--kadwa);
+    font-weight: 300;
+    color: white;
+}
+#linkSec input{
+    border: 0;
+    outline: none;
+    font-size: 0.7vw;
+    width: 25vw;
+    border-radius: 0.4vw;
+    font-family: var(--kadwa);
+    padding: 0.4vw;
+}
+#linkSec button{
+    border: 0;
+    font-size: 0.9vw;
+    background: white;
+    width: 6vw;
+    border-radius: 0.4vw;
+    font-family: var(--kadwa);
+    color: var(--primaryColor);
+}
+button:hover{
+    cursor: pointer;
+}
+
+:root{
+    --primaryColor: #89080A;
+    --kadwa: "Kadwa", serif;
+    --k2d: "K2D", sans-serif;
+}
