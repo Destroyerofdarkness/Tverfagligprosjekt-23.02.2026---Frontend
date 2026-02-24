@@ -1,7 +1,7 @@
 document.addEventListener("click", async function (e) {
   if (e.target.classList.contains("deleteComment")) {
     const commentId = e.target.dataset.id;
-    await fetch("http://10.12.14.239:6001/comments/delete", {
+    const res = await fetch("http://10.12.14.239:6001/comment/delete", {
       method: "DELETE",
       body: JSON.stringify({commentId}),
         headers: { "Content-Type": "application/json" },
@@ -9,7 +9,7 @@ document.addEventListener("click", async function (e) {
 
     const data = await res.json();
   if(data.success){
-    window.location.href = "/"
+    window.location.reload() 
   }
   }
 });
