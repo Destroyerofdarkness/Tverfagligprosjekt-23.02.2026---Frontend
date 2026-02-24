@@ -19,6 +19,16 @@ const render_sign_in = (req,res)=>{
     }
 }
 
+const sign_out = (req,res)=>{
+    try{
+    res.cookie("jwt","",{maxAge:10})
+    res.redirect("/loggInn")
+    }catch(err){
+        console.log(err);
+        res.status(500).send("Error:",err)
+    }
+}
+
 const create_cookie = (req,res)=>{
    const token = req.params.token
     try{
@@ -35,5 +45,6 @@ const create_cookie = (req,res)=>{
 module.exports = {
     render_sign_up,
     render_sign_in,
+    sign_out,
     create_cookie
 }
