@@ -7,16 +7,19 @@
     <section class="mainSec" >
         <label for="title">Tittel:</label>
         <input type="text" name="title" id="title" placeholder="Skriv inn Tittel..">
+        <div class="error title"></div>
     </section>
     <section class="mainSec">
         <label for="content">Beskrivelse:</label>
         <textarea name="content" id="content" placeholder="Skriv inn en god vurdering.."></textarea>
+        <div class="error content"></div>
     </section>
     <section id="linkSec"><label for="link">Link:</label>
-    <input type="url" name="link" id="link" placeholder="Skriv inn lenke til nettstedet..">
+    <input type="text" name="link" id="link" placeholder="Skriv inn lenke til nettstedet..">
     <input type="hidden" name="user" id="user" value="<%= user %>">
     <button type="submit">Publiser</button>
     </section>
+    <div class="error link"></div>
 </form>
 
 </body>

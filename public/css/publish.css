@@ -5,7 +5,7 @@ form{
     background: var(--primaryColor);
     width: max-content;
     align-self: center;
-    margin: 8vw;
+    margin: 6vw;
     padding: 1vw;
     border-radius: 0.5vw;
 }
@@ -67,6 +67,13 @@ form{
     border-radius: 0.4vw;
     font-family: var(--kadwa);
     color: var(--primaryColor);
+}
+.error{
+    font-size: 1vw;
+    color: rgb(205, 205, 205);
+    font-family: var(--kadwa);
+    font-weight: 300;
+
 }
 button:hover{
     cursor: pointer;
