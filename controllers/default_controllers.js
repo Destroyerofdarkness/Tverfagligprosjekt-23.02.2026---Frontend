@@ -1,8 +1,10 @@
+const getData = require("../handlers/getDataHandler")
 
-
-const render_homepage = (req,res)=>{
+const render_homepage = async(req,res)=>{
     try{
-        res.render("index", {title: "Hjemmeside"})
+        const {reviews} = await getData("/review/sendOutReviews")
+        console.log(reviews)
+        res.render("index", {title: "Hjemmeside", reviews})
     }catch(err){
         res.status(500).send("Error:", err)
     }

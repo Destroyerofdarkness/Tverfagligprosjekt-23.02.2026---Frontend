@@ -1,9 +1,15 @@
 <%- include("./partials/head.ejs") %>
+<link rel="stylesheet" href="/css/home.css">
 <%- include("./partials/header.ejs") %>
-
-    
-    <% if(user){ %>
-        <h2>Hello <%= user %></h2>
-        <% } %>
+    <main>
+        
+        <% reviews.forEach(review => { %>
+            <section>
+                <a class="info" href="/review/<%= review._id %>">
+                <h2><%= review.title %></h2> </a>
+                <a class="link" href="<%= review.link %>">Sidelenke: Her!</a>
+                </section>
+        <%}); %>
+    </main>
 </body>
 </html>
