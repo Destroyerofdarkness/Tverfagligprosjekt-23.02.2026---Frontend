@@ -93,7 +93,16 @@ h4{
     color: white;
 
 }
-
+#deleteReview{
+    border: 0;
+    font-size: 1.2vw;
+    background: white;
+    color: var(--primaryColor);
+    font-family: var(--kadwa);
+    font-weight: 300;
+    border-radius: 0.5vw;
+    width: 8vw;
+}
 :root{
     --primaryColor: #89080A;
     --kadwa: "Kadwa", serif;

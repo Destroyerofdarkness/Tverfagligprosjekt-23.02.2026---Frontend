@@ -1,6 +1,7 @@
 <%- include("./partials/head.ejs") %>
 <link rel="stylesheet" href="/css/review.css">
 <script src="/script/fetch_publish_comment.js" defer></script>
+<script src="/script/fetch_delete_review.js" defer></script>
 <%- include("./partials/header.ejs") %>
 <main>
     <section>
@@ -8,6 +9,9 @@
         <p><%= review.content %></p>
         <a href="<%= review.link %>">Sidelenke: Her!</a>
         <p>Laget av: <%= review.user %></p>
+        <% if(review.user === user){ %>
+        <button id="deleteReview" type="submit" value="<%=review._id   %>">Slett</button>
+        <% } %>
     </section>
     <%if(user){ %>
     <form>
