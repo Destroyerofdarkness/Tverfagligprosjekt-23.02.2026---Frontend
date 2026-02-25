@@ -41,6 +41,9 @@ main section button{
     border-radius: 0.5vw;
     width: 6vw;
 }
+footer{
+    margin-top: 13vw;
+}
 button:hover{
     cursor: pointer;
 }
