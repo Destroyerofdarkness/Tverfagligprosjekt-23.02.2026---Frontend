@@ -1,0 +1,37 @@
+main{
+    display: flex;
+    align-self: center;
+    margin-top: 5vw;
+    flex-direction: column;
+    gap: 4vw;
+}
+main section{
+    background: var(--primaryColor);
+    padding: 1vw;
+    border-radius: 0.7vw;
+    max-width: 30vw;
+    min-width: 38vw;
+}
+main section h2{
+    color: white;
+    font-size: 1.5vw;
+    font-family: var(--kadwa);
+    font-weight: 300;
+}
+main section h3{
+    color: white;
+    font-size: 1vw;
+    font-family: var(--kadwa);
+    font-weight: 300;
+}
+main section p {
+    color: white;
+    font-size: 0.8vw;
+    font-family: var(--kadwa);
+    font-weight: 300;
+}
+:root{
+    --primaryColor: #89080A;
+    --kadwa: "Kadwa", serif;
+    --k2d: "K2D", sans-serif;
+}

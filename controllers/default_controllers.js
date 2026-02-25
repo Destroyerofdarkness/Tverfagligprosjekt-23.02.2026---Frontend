@@ -19,8 +19,18 @@ const render_404 = async(req,res)=>{
     }
 }
 
+const render_admin_page = async(req,res)=>{
+    try {
+        const {reports} = await getData("/report/send_out")
+        res.render("admin", {title: "Raporteringer", reports})
+    } catch (err) {
+        res.status(500).send(err);
+    }
+}
+
 
 module.exports = {
     render_homepage,
-    render_404
+    render_404,
+    render_admin_page
 }

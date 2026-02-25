@@ -9,6 +9,9 @@
         <% if(user){ %>
             <a href="/vurdering/publiser">Publiser Vurdering</a>
             <a href="/loggUt">Logg Ut</a>
+            <% if(user.role === "admin"){ %>
+                <a href="/admin">Rapporteringer</a>
+                <% } %>
         <% }else{ %>    
             <a href="/loggInn">Logg Inn</a>
         <% } %>

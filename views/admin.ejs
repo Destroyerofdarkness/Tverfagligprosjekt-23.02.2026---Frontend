@@ -1,0 +1,18 @@
+<%- include("./partials/head.ejs") %>
+<link rel="stylesheet" href="/css/reports.css">
+<%- include("./partials/header.ejs") %>
+    <main>
+        
+        <% reports.forEach(report => { %>
+            <section>
+                
+                <h2> <%= report.user %></h2> 
+                <h3>Vurdering: <%= report.connection %></h3>
+                
+                <p>Beskrivelse: <%= report.content %></p>
+            
+                </section>
+        <%}); %>
+    </main>
+</body>
+</html>
