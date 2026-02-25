@@ -3,6 +3,7 @@
 <script src="/script/fetch_publish_comment.js" defer></script>
 <script src="/script/fetch_delete_review.js" defer></script>
 <script src="/script/fetch_delete_comment.js" defer></script>
+<script src="/script/fetch_publish_report.js" defer></script>
 <%- include("./partials/header.ejs") %>
 <main>
     <section>
@@ -10,7 +11,7 @@
         <p><%= review.content %></p>
         <a href="<%= review.link %>">Sidelenke: Her!</a>
         <p>Laget av: <%= review.user %></p>
-        <% if(review.user === user){ %>
+        <% if(review.user === user.name || user.role === "admin"){ %>
         <button id="deleteReview" value="<%=review._id  %>">Slett</button>
         <% } %>
     </section>
@@ -20,9 +21,19 @@
         <label for="content">Skriv et kommentar:</label>
         <textarea type="text" name="content" id="content" placeholder="Skriv inn en kommentar.."></textarea>
         </section>
-        <input type="hidden"name="user" id="user" value="<%= user %>">
+        <input type="hidden"name="user" id="user" value="<%= user.name %>">
         <input type="hidden" name="connection" id="connection" value="<%= review._id %>">
         <button type="submit">Publiser</button>
+    </form>
+
+    <form id="report">
+        <section>
+        <label for="content">Rapporter Vurderingen:</label>
+        <textarea type="text" name="content" id="content" placeholder="Rapporter Her.."></textarea>
+        </section>
+        <input type="hidden"name="user" id="user" value="<%= user.name %>">
+        <input type="hidden" name="connection" id="connection" value="<%= review.name %>">
+        <button type="submit">Rapporter</button>
     </form>
     <% } %>
     <div>
@@ -32,7 +43,7 @@
         <% comments.forEach(comment => {%>
            <h4><%= comment.user %></h4> 
            <p><%= comment.content %></p>
-           <% if(comment.user === user){%>
+           <% if(comment.user === user.name || user.role === "admin"){%>
             <button class="deleteComment" data-id="<%= comment._id %>">Slett</button>
           <% } %>
         <%}); %>
