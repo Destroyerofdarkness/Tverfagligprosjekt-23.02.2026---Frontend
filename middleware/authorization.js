@@ -7,7 +7,9 @@ const checkAdmin = (req,res,next)=>{
     }else{
         res.redirect("/")
     }
-}
+}else{
+        res.redirect("/")
+    }
 }
 
 module.exports = {checkAdmin}
