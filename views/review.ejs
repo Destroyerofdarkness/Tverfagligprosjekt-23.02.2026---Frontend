@@ -1,9 +1,9 @@
 <%- include("./partials/head.ejs") %>
 <link rel="stylesheet" href="/css/review.css">
-<script src="/script/fetch_publish_comment.js" defer></script>
-<script src="/script/fetch_delete_review.js" defer></script>
-<script src="/script/fetch_delete_comment.js" defer></script>
-<script src="/script/fetch_publish_report.js" defer></script>
+<script src="/script/post_req/fetch_publish_comment.js" defer></script>
+<script src="/script/delete_req/fetch_delete_review.js" defer></script>
+<script src="/script/delete_req/fetch_delete_comment.js" defer></script>
+<script src="/script/post_req/fetch_publish_report.js" defer></script>
 <%- include("./partials/header.ejs") %>
 <main>
     <section>
@@ -11,8 +11,10 @@
         <p><%= review.content %></p>
         <a href="<%= review.link %>">Sidelenke: Her!</a>
         <p>Laget av: <%= review.user %></p>
+        <% if(user){ %>
         <% if(review.user === user.name || user.role === "admin"){ %>
         <button id="deleteReview" value="<%=review._id  %>">Slett</button>
+        <% } %>
         <% } %>
     </section>
     <%if(user){ %>
@@ -32,7 +34,7 @@
         <textarea type="text" name="content" id="content" placeholder="Rapporter Her.."></textarea>
         </section>
         <input type="hidden"name="user" id="user" value="<%= user.name %>">
-        <input type="hidden" name="connection" id="connection" value="<%= review.name %>">
+        <input type="hidden" name="connection" id="connection" value="<%= review.title %>">
         <button type="submit">Rapporter</button>
     </form>
     <% } %>
@@ -43,8 +45,10 @@
         <% comments.forEach(comment => {%>
            <h4><%= comment.user %></h4> 
            <p><%= comment.content %></p>
+           <% if(user){ %>
            <% if(comment.user === user.name || user.role === "admin"){%>
             <button class="deleteComment" data-id="<%= comment._id %>">Slett</button>
+          <% } %>
           <% } %>
         <%}); %>
         <% }else{ %>

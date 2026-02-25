@@ -1,11 +1,11 @@
 const report = document.querySelector("#report");
 
-
 report.addEventListener("submit", async (e) => {
   e.preventDefault();   
-    const content = form.content.value
-    const user  = form.user.value
-    const connection = form.connection.value
+    const content = report.content.value
+    const user  = report.user.value
+    const connection = report.connection.value
+    console.log(connection)
     
   const res = await fetch("http://10.12.14.239:6001/report/publish", {
     method: "POST",
