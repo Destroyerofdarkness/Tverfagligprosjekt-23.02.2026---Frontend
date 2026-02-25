@@ -1,5 +1,6 @@
 <%- include("./partials/head.ejs") %>
 <link rel="stylesheet" href="/css/reports.css">
+<script src="/script/delete_req/fetch_report_delete.js"></script>
 <%- include("./partials/header.ejs") %>
     <main>
         
@@ -10,7 +11,7 @@
                 <h3>Vurdering: <%= report.connection %></h3>
                 
                 <p>Beskrivelse: <%= report.content %></p>
-            
+               <button class="deleteReport" data-id="<%= report._id %>">Slett</button>
                 </section>
         <%}); %>
     </main>
