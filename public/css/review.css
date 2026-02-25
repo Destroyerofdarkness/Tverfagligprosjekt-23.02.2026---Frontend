@@ -24,6 +24,10 @@ main section p{
     font-weight: 300;
     color: white;
 }
+main section img{
+    width: max-content;
+    height: 10vw;
+}
 main section a{
     font-size: 1vw;
     font-family: var(--kadwa);
